@@ -42,7 +42,7 @@ export function Skills({ skills, className }: SkillsProps) {
   return (
     <Section className={className}>
       <h2 className="text-xl font-bold" id="skills-section">
-        Skills
+        Compétences
       </h2>
       <SkillsList skills={skills} />
     </Section>

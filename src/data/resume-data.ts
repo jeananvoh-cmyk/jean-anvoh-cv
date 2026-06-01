@@ -9,7 +9,9 @@ export const RESUME_DATA: ResumeData = {
     "Gestionnaire d'incidents télécom orienté Digital & AI Operations — supervision réseau, automatisation, reporting.",
   summary:
     "Gestionnaire d'incidents Core & RAN (Huawei GNOC Africa) avec 5 ans d'expérience en supervision réseau, reporting opérationnel et gestion documentaire ITIL. Passionné d'automatisation et d'IA : j'utilise Claude et Claude Code au quotidien pour concevoir des outils de reporting, automatiser des workflows et déployer des applications web et mobiles. 7 produits digitaux construits et déployés en autonomie. Disponible immédiatement.",
-  avatarUrl: "https://github.com/jeananvoh-cmyk.png",
+  // Photo : déposer le fichier dans public/profile.jpg (ou .png et adapter ici).
+  // Tant qu'aucune photo n'est présente, les initiales "JA" s'affichent.
+  avatarUrl: "/profile.jpg",
   personalWebsiteUrl: "https://jean-anvoh-portfolio.vercel.app",
   contact: {
     email: "jeananvoh.pro@gmail.com",

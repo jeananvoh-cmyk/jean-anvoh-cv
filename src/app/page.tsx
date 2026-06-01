@@ -111,10 +111,7 @@ export default function ResumePage() {
               className="animate-fade-in"
               style={{ animationDelay: "375ms" }}
             >
-              <Languages
-                languages={RESUME_DATA.languages}
-                personalInfo={RESUME_DATA.personalInfo}
-              />
+              <Languages languages={RESUME_DATA.languages} />
             </div>
             <div
               className="animate-fade-in"

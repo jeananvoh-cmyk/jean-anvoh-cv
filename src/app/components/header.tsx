@@ -3,6 +3,7 @@ import type React from "react";
 import { Avatar } from "@/components/avatar";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { XIcon } from "@/components/icons/x-icon";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import type { IconType } from "@/lib/types";
@@ -103,6 +104,36 @@ function PrimaryContact({ email, tel }: PrimaryContactProps) {
         </Button>
       )}
     </div>
+  );
+}
+
+interface PersonalInfoBadgesProps {
+  personalInfo: typeof RESUME_DATA.personalInfo;
+}
+
+/**
+ * Infos personnelles condensées, visibles en haut, sans titre de section.
+ */
+function PersonalInfoBadges({ personalInfo }: PersonalInfoBadgesProps) {
+  if (personalInfo.length === 0) return null;
+
+  return (
+    <ul
+      className="flex list-none flex-wrap gap-1 pt-1"
+      aria-label="Informations personnelles"
+    >
+      {personalInfo.map((info) => (
+        <li key={info}>
+          <Badge
+            variant="secondary"
+            className="font-normal print:text-[10px]"
+            aria-label={info}
+          >
+            {info}
+          </Badge>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -209,6 +240,8 @@ export function Header() {
           contact={RESUME_DATA.contact}
           personalWebsiteUrl={RESUME_DATA.personalWebsiteUrl}
         />
+
+        <PersonalInfoBadges personalInfo={RESUME_DATA.personalInfo} />
 
         <PrintContact
           contact={RESUME_DATA.contact}
