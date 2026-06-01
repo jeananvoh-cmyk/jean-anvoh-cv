@@ -30,8 +30,8 @@ export function Avatar({
         <Image
           src={src}
           alt={alt}
-          width={112}
-          height={112}
+          width={256}
+          height={256}
           className="aspect-square h-full w-full object-cover"
           onError={() => setError(true)}
           priority={true}

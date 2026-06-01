@@ -177,35 +177,35 @@ interface PrintContactProps {
 
 function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
   return (
-    <div className="hidden gap-x-2 font-mono text-sm text-foreground/80 print:flex print:text-[12px]">
-      {personalWebsiteUrl && (
-        <>
-          <a
-            className="underline hover:text-foreground/70"
-            href={personalWebsiteUrl}
-          >
-            {new URL(personalWebsiteUrl).hostname}
-          </a>
-          <span aria-hidden="true">/</span>
-        </>
-      )}
+    <div className="hidden flex-wrap items-center gap-x-2 gap-y-1 font-mono text-sm text-foreground/80 print:flex print:text-[11px]">
       {contact.email && (
         <>
           <a
-            className="underline hover:text-foreground/70"
+            className="whitespace-nowrap underline hover:text-foreground/70"
             href={`mailto:${contact.email}`}
           >
             {contact.email}
           </a>
-          <span aria-hidden="true">/</span>
+          <span aria-hidden="true">·</span>
         </>
       )}
       {contact.tel && (
+        <>
+          <a
+            className="whitespace-nowrap underline hover:text-foreground/70"
+            href={`tel:${contact.tel.replace(/\s/g, "")}`}
+          >
+            {contact.tel}
+          </a>
+          {personalWebsiteUrl && <span aria-hidden="true">·</span>}
+        </>
+      )}
+      {personalWebsiteUrl && (
         <a
-          className="underline hover:text-foreground/70"
-          href={`tel:${contact.tel}`}
+          className="whitespace-nowrap underline hover:text-foreground/70"
+          href={personalWebsiteUrl}
         >
-          {contact.tel}
+          {new URL(personalWebsiteUrl).hostname}
         </a>
       )}
     </div>
@@ -217,8 +217,8 @@ function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
  */
 export function Header() {
   return (
-    <header className="flex items-center justify-between">
-      <div className="flex-1 space-y-1.5">
+    <header className="flex items-center justify-between gap-4">
+      <div className="min-w-0 flex-1 space-y-1.5">
         <h1 className="text-3xl font-bold tracking-tight" id="resume-name">
           {RESUME_DATA.name}
         </h1>
@@ -250,9 +250,9 @@ export function Header() {
       </div>
 
       <Avatar
-        className="size-28 ring-1 ring-muted"
+        className="size-36 ring-1 ring-muted print:size-32"
         src={RESUME_DATA.avatarUrl}
-        alt={`${RESUME_DATA.name}'s profile picture`}
+        alt={`Photo de ${RESUME_DATA.name}`}
         fallback={RESUME_DATA.initials}
       />
     </header>
