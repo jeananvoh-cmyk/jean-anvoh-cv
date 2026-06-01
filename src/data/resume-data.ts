@@ -20,14 +20,9 @@ export const RESUME_DATA: ResumeData = {
         url: "https://github.com/jeananvoh-cmyk",
         icon: "github",
       },
-      {
-        name: "Portfolio",
-        url: "https://jean-anvoh-portfolio.vercel.app",
-        icon: "globe",
-      },
     ],
   },
-  Formation: [
+  education: [
     {
       school: "LBS — Lomé Business School (Togo)",
       degree:
@@ -137,6 +132,11 @@ export const RESUME_DATA: ResumeData = {
     "Linux / Windows Server",
     "Gestion de projet",
   ],
+  languages: [
+    { name: "Français", level: "Langue maternelle" },
+    { name: "Anglais", level: "B2 — professionnel" },
+  ],
+  personalInfo: ["Permis BCDE", "Marié, 1 enfant", "Disponible immédiatement"],
   projects: [
     {
       title: "SIGNA.ci",

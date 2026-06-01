@@ -4,6 +4,7 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { generateResumeStructuredData } from "@/lib/structured-data";
 import { Education } from "./components/education";
 import { Header } from "./components/header";
+import { Languages } from "./components/languages";
 import { Projects } from "./components/projects";
 import { Skills } from "./components/skills";
 import { Summary } from "./components/summary";
@@ -109,6 +110,15 @@ export default function ResumePage() {
             <div
               className="animate-fade-in"
               style={{ animationDelay: "375ms" }}
+            >
+              <Languages
+                languages={RESUME_DATA.languages}
+                personalInfo={RESUME_DATA.personalInfo}
+              />
+            </div>
+            <div
+              className="animate-fade-in"
+              style={{ animationDelay: "450ms" }}
             >
               <Projects projects={RESUME_DATA.projects} />
             </div>

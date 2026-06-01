@@ -65,6 +65,47 @@ function SocialButton({ href, iconType, label }: SocialButtonProps) {
   );
 }
 
+interface PrimaryContactProps {
+  email: string;
+  tel: string;
+}
+
+/**
+ * Prominent, easy-to-tap email and phone CTAs for recruiters.
+ */
+function PrimaryContact({ email, tel }: PrimaryContactProps) {
+  return (
+    <div className="flex flex-wrap gap-2 pt-1 print:hidden">
+      {email && (
+        <Button
+          variant="default"
+          size="sm"
+          className="h-9 gap-1.5 px-3 text-sm font-medium"
+          asChild={true}
+        >
+          <a href={`mailto:${email}`} aria-label={`Envoyer un email à ${email}`}>
+            <MailIcon className="size-4" aria-hidden="true" />
+            {email}
+          </a>
+        </Button>
+      )}
+      {tel && (
+        <Button
+          variant="outline"
+          size="sm"
+          className="h-9 gap-1.5 px-3 text-sm font-medium"
+          asChild={true}
+        >
+          <a href={`tel:${tel.replace(/\s/g, "")}`} aria-label={`Appeler le ${tel}`}>
+            <PhoneIcon className="size-4" aria-hidden="true" />
+            {tel}
+          </a>
+        </Button>
+      )}
+    </div>
+  );
+}
+
 interface ContactButtonsProps {
   contact: typeof RESUME_DATA.contact;
   personalWebsiteUrl?: string;
@@ -74,32 +115,14 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
   return (
     <ul
       className="flex list-none gap-x-1 pt-1 font-mono text-sm text-foreground/80 print:hidden"
-      aria-label="Contact links"
+      aria-label="Liens externes"
     >
       {personalWebsiteUrl && (
         <li>
           <SocialButton
             href={personalWebsiteUrl}
             iconType="globe"
-            label="Personal website"
-          />
-        </li>
-      )}
-      {contact.email && (
-        <li>
-          <SocialButton
-            href={`mailto:${contact.email}`}
-            iconType="mail"
-            label="Email"
-          />
-        </li>
-      )}
-      {contact.tel && (
-        <li>
-          <SocialButton
-            href={`tel:${contact.tel}`}
-            iconType="phone"
-            label="Phone"
+            label="Portfolio"
           />
         </li>
       )}
@@ -175,6 +198,11 @@ export function Header() {
         <LocationLink
           location={RESUME_DATA.location}
           locationLink={RESUME_DATA.locationLink}
+        />
+
+        <PrimaryContact
+          email={RESUME_DATA.contact.email}
+          tel={RESUME_DATA.contact.tel}
         />
 
         <ContactButtons
