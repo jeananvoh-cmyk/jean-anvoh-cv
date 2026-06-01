@@ -18,9 +18,9 @@ export const RESUME_DATA: ResumeData = {
     languages: "Langues",
     projects: "Projets",
   },
-  // Photo : déposer le fichier dans public/profile.jpg (ou .png et adapter ici).
+  // Photo : fichier dans public/profile.png.
   // Tant qu'aucune photo n'est présente, les initiales "JA" s'affichent.
-  avatarUrl: "/profile.jpg",
+  avatarUrl: "/profile.png",
   personalWebsiteUrl: "https://jean-anvoh-portfolio.vercel.app",
   contact: {
     email: "jeananvoh.pro@gmail.com",
