@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
-import type { RESUME_DATA } from "@/data/resume-data";
+import { RESUME_DATA } from "@/data/resume-data";
 
 type ProjectTags = readonly string[];
 
@@ -123,7 +123,7 @@ export function Projects({ projects }: ProjectsProps) {
   return (
     <Section className="scroll-mb-16 print:space-y-4">
       <h2 className="text-xl font-bold" id="side-projects">
-        Projets
+        {RESUME_DATA.sectionTitles.projects}
       </h2>
       <div
         className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2"

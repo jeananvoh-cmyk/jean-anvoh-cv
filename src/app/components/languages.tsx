@@ -15,7 +15,7 @@ export function Languages({ languages, className }: LanguagesProps) {
   return (
     <Section className={cn(className)}>
       <h2 className="text-xl font-bold" id="languages-section">
-        Langues
+        {RESUME_DATA.sectionTitles.languages}
       </h2>
       <ul
         className="flex list-none flex-wrap gap-1 p-0"

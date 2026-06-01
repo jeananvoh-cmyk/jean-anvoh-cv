@@ -40,6 +40,14 @@ export interface ResumeData {
     description: string;
     highlights?: readonly string[];
   }>;
+  sectionTitles: {
+    summary: string;
+    work: string;
+    education: string;
+    skills: string;
+    languages: string;
+    projects: string;
+  };
   skills: string[];
   languages: Array<{
     name: string;

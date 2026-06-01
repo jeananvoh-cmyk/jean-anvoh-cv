@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Section } from "@/components/ui/section";
+import { RESUME_DATA } from "@/data/resume-data";
 import { cn } from "@/lib/utils";
 
 type Skills = readonly string[];
@@ -42,7 +43,7 @@ export function Skills({ skills, className }: SkillsProps) {
   return (
     <Section className={className}>
       <h2 className="text-xl font-bold" id="skills-section">
-        Compétences
+        {RESUME_DATA.sectionTitles.skills}
       </h2>
       <SkillsList skills={skills} />
     </Section>

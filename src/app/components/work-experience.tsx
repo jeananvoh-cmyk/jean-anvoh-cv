@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
-import type { RESUME_DATA } from "@/data/resume-data";
+import { RESUME_DATA } from "@/data/resume-data";
 import { cn } from "@/lib/utils";
 
 type WorkExperience = (typeof RESUME_DATA)["work"][number];
@@ -144,7 +144,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
   return (
     <Section>
       <h2 className="text-xl font-bold" id="work-experience">
-        Expérience professionnelle
+        {RESUME_DATA.sectionTitles.work}
       </h2>
       <div
         className="space-y-4 print:space-y-0"

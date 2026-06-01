@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
-import type { RESUME_DATA } from "@/data/resume-data";
+import { RESUME_DATA } from "@/data/resume-data";
 
 type Education = (typeof RESUME_DATA)["education"][number];
 
@@ -66,7 +66,7 @@ export function Education({ education }: EducationListProps) {
   return (
     <Section>
       <h2 className="text-xl font-bold" id="education-section">
-        Formation
+        {RESUME_DATA.sectionTitles.education}
       </h2>
       <div
         className="space-y-4"
