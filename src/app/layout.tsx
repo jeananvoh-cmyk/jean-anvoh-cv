@@ -9,22 +9,22 @@ import { ErrorBoundary } from "@/components/error-boundary";
 import { RESUME_DATA } from "@/data/resume-data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cv.jarocki.me"),
+  metadataBase: new URL("https://jean-anvoh-cv.vercel.app"),
   title: {
-    default: `${RESUME_DATA.name} - ${RESUME_DATA.about}`,
+    default: `${RESUME_DATA.name} — Junior Digital & AI Operations Officer`,
     template: `%s | ${RESUME_DATA.name}`,
   },
-  description: RESUME_DATA.about,
+  description: RESUME_DATA.summary,
   keywords: [
-    "resume",
     "cv",
-    "portfolio",
+    "candidature",
     RESUME_DATA.name,
-    "software engineer",
-    "full stack developer",
-    "react",
-    "next.js",
-    "typescript",
+    "digital operations",
+    "AI operations",
+    "automatisation",
+    "reporting",
+    "ITIL",
+    "Côte d'Ivoire",
   ],
   authors: [{ name: RESUME_DATA.name }],
   creator: RESUME_DATA.name,
@@ -55,9 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${RESUME_DATA.name} - ${RESUME_DATA.about}`,
+    title: `${RESUME_DATA.name} — Junior Digital & AI Operations Officer`,
     description: RESUME_DATA.about,
-    creator: "@BartoszJarocki",
   },
   alternates: {
     canonical: RESUME_DATA.personalWebsiteUrl,
@@ -80,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="fr" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
         <ErrorBoundary>{children}</ErrorBoundary>
         <Analytics />
