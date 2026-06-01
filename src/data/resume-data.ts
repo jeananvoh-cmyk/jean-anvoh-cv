@@ -27,7 +27,7 @@ export const RESUME_DATA: ResumeData = {
       },
     ],
   },
-  education: [
+  Formation: [
     {
       school: "LBS — Lomé Business School (Togo)",
       degree:
@@ -127,7 +127,8 @@ export const RESUME_DATA: ResumeData = {
     "Automatisation / No-code",
     "Excel / Google Sheets",
     "Claude / Claude Code (IA)",
-    "Microsoft 365",
+    "Microsoft 365 / Google Workspace",
+    "Power BI",
     "ITIL — Gestion d'incidents",
     "Supervision (NCE, CACTI)",
     "TCP/IP · IS-IS / MPLS",
